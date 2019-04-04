@@ -77,14 +77,15 @@ public class Engine {
 				}	
 			}
 		}
+	//need record score
+		//display words in caps
+	
+    //set returns and public
+		// 
+	  
+		
 		
 		
 	}
-	
-	
-	
-	
-	
-	
 
 }
