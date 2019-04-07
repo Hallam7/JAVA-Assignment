@@ -79,13 +79,59 @@ public class Engine {
 		}
 	//need record score
 		//display words in caps
-	
-    //set returns and public
-		// 
-	  
+		System.out.println("Words in all Caps: " + (upper));
 		
+		multiply = counter * 10;
+		score = multiply;
 		
+		if (upper >= 1)
+		{
+			score = score +100;
+		}
 		
+		else if (upper >= 1)
+		{
+			multiply = 0;
+			multiply = upper * 10;
+			score = score + multiply;
+		}
+		
+		System.out.println("Score: " + (score));
 	}
+    //set returns and public
+	
+	public int getUpper()
+	{
+		return upper;
+	}
+	
+	public int getCount()
+	{
+		return count;
+	}
+	
+	public int getPost()
+	{
+		return post_size;
+	}
+	
+	public int getScore()
+	{
+		return score;
+	}
+	
+	public int getMultiply()
+	{
+		return multiply;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
