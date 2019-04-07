@@ -105,9 +105,19 @@ public class Engine {
 		return upper;
 	}
 	
+	public void setUpper(int upper)
+	{
+		this.upper = upper;
+	}
+	
 	public int getCount()
 	{
 		return count;
+	}
+	
+	public void setCount(int count)
+	{
+		this.count = count;
 	}
 	
 	public int getPost()
@@ -115,9 +125,19 @@ public class Engine {
 		return post_size;
 	}
 	
+	public void setPost(int post)
+	{
+		this.post = post;
+	}
+	
 	public int getScore()
 	{
 		return score;
+	}
+	
+	public void getSore(int score)
+	{
+		this.score = score;
 	}
 	
 	public int getMultiply()
@@ -125,13 +145,8 @@ public class Engine {
 		return multiply;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-
+	public void getMultiply(int multiply)
+	{
+		this.multiply = multiply;
+	}
 }
