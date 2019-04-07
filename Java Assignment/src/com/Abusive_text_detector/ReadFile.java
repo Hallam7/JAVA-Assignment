@@ -9,11 +9,13 @@ package src.com.Abusive_text_detector;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.nio.charset.Charset;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
 
 public class ReadFile {
 
@@ -33,6 +35,41 @@ public class ReadFile {
 	}
 	
 	//Opening the file
-
+	public void openfile()
+	{
+		txtfile = new File(filename)
+	}
+	
+	public void read
+	{
+		try
+		{
+			scanner = new Scanner(txtfile);
+			
+			while (scanner.hasNextLine())
+			{
+				templine = scanner.nextLine();
+				word_array.add(templine);
+			}
+		}
+		
+		catch (FileNotFoundExpection e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		//Error - line 62 - Finally not recognised 
+		Finally 
+		{
+			System.out.println((filename) + "=" + (word_array));
+			scanner.close();
+		}
+		
+	}
+	
+	public void closefile()
+	{
+		scanner.close();
+	}
 	
 }
