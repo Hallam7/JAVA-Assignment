@@ -81,7 +81,7 @@ public class Engine {
 		//display words in caps
 		System.out.println("Words in all Caps: " + (upper));
 		
-		multiply = counter * 10;
+		multiply = count * 10;
 		score = multiply;
 		
 		if (upper >= 1)
@@ -127,7 +127,7 @@ public class Engine {
 	
 	public void setPost(int post)
 	{
-		this.post = post;
+		this.post_size = post;
 	}
 	
 	public int getScore()
