@@ -5,7 +5,7 @@
  * 
  */
 
-package src.com.Abusive_text_detector;
+package com.Abusive_text_detector;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,13 +22,13 @@ public class ReadFile {
 	String filename;
 	File txtfile;
 	Scanner scanner;
-	ArrayList<String> word_array = new ArrrayList<String>();
+	ArrayList<String> word_array = new ArrayList<String>();
 	String templine;
 	PrintWriter pwInput;
 	String input;
 	
 	//Filename Constructor
-	public ReadFile(String filename, ArrayList<String> word_array;
+	public ReadFile(String filename, ArrayList<String> word_array)
 	{
 		this.filename = filename;
 		this.word_array = word_array;
@@ -37,10 +37,10 @@ public class ReadFile {
 	//Opening the file
 	public void openfile()
 	{
-		txtfile = new File(filename)
+		txtfile = new File(filename);
 	}
 	
-	public void read
+	public void read()
 	{
 		try
 		{
