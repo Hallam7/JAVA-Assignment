@@ -51,11 +51,20 @@ public class Display extends JFrame implements ActionListener
 		result = new JTextArea();
 		panel_l = new JPanel();
 		
+		//.setEnabled(false);
+		//.setDisabledTextColor(Color.BLACK);
+		postpart.setEnabled(false);
+		postpart.setDisabledTextColor(Color.BLACK);
+		badpart.setEnabled(false);
+		badpart.setDisabledTextColor(Color.BLACK);
+		result.setEnabled(false);
+		result.setDisabledTextColor(Color.BLACK);
+
+		//.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		badmove.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		postmove.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		
-		
-		
-		//add load
-		//button here
+		//Buttons
 		add(showexplicit);
 		add(choosefile);
 		add(checkfor);
@@ -65,6 +74,15 @@ public class Display extends JFrame implements ActionListener
 		add(badmove);
 		add(result);
 	
+		//.addActionListener(this);
+		
+		
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		ReadFile read = new ReadFile("abusive.txt", explicit);
+		read.openfile();
+		read.read();
 		
 	}
 	
