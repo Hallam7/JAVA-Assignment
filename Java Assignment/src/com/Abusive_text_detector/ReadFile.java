@@ -59,7 +59,7 @@ public class ReadFile {
 		}
 		
 		//Error - line 62 - Finally not recognised 
-		Finally 
+		finally  
 		{
 			System.out.println((filename) + "=" + (word_array));
 			scanner.close();
