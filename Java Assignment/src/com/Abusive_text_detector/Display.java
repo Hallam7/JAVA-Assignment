@@ -18,7 +18,7 @@ import java.awt.FlowLayout;
 
 public class Display extends JFrame implements ActionListener
 {
-	JButton showex, button, add, choosefile, remove;
+	JButton showexplicit, button, choosefile, checkfor, add, remove;
 	private ArrayList<String> explicit = new ArrayList<String>();
 	
 	JFileChooser choose;
@@ -36,14 +36,35 @@ public class Display extends JFrame implements ActionListener
 		setSize(800, 550);
 		setResizable(false);
 		setLayout(new FlowLayout());
-		button = new JButton ("Load Explicit File");
+		button = new JButton("Load Explicit File");
+		showexplicit = new JButton("Show Explcit Content");
+		choosefile = new JButton("Choose File to Scan");
+		checkfor = new JButton("Check for Explicit Content");
+		add = new JButton ("Add Word");
+		remove = new JButton ("Remove Word");
+		
+		choose = new JFileChooser();
+		postpart = new JTextArea(20, 25);
+		postmove = new JScrollPane(postpart);
+		badpart = new JTextArea(20, 20);
+		badmove = new JScrollPane(badpart);
+		result = new JTextArea();
+		panel_l = new JPanel();
+		
 		
 		
 		
 		//add load
 		//button here
-		
-		
+		add(showexplicit);
+		add(choosefile);
+		add(checkfor);
+		add(add);
+		add(remove);
+		add(postmove);
+		add(badmove);
+		add(result);
+	
 		
 	}
 	
