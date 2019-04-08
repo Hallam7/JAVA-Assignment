@@ -41,7 +41,7 @@ public class Replace {
 			for (String s : explicit)
 			{
 				//Method from Apache Commons Library
-				FileUtils.writeStringToFile(txtfile, (s) + (newline), Charset.forName("utf-8"), true;)
+				FileUtils.writeStringToFile(txtfile, (s) + (newline), Charset.forName("utf-8"), true);
 			}
 		}
 		catch (IOException e)
