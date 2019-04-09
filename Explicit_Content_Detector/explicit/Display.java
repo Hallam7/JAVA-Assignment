@@ -1,4 +1,4 @@
-package com.Abusive_text_detector;
+package explicit;
 
 import java.io.File;
 import java.util.Arrays;
@@ -15,6 +15,8 @@ import javax.swing.JPanel;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Display extends JFrame implements ActionListener
 {
@@ -85,6 +87,12 @@ public class Display extends JFrame implements ActionListener
 		read.read();
 		
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	// Add content of array list to text
@@ -102,7 +110,7 @@ public class Display extends JFrame implements ActionListener
 	
 	//select file to be scanned
 	//read to string
-	//diplay
+	//display
 	
 	
 	//make sure file is loaded

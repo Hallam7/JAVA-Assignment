@@ -1,12 +1,4 @@
-/*
- * Description: 
- * Class used for reading the text file with explicit content.
- * The text file is loaded into an arraylist.
- * 
- */
-
-package com.Abusive_text_detector;
-
+package explicit;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -53,7 +45,7 @@ public class ReadFile {
 			}
 		}
 		
-		catch (FileNotFoundExpection e)
+		catch (FileNotFoundException e)
 		{
 			System.out.println(e.getMessage());
 		}
