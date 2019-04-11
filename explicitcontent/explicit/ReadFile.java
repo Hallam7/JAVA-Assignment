@@ -1,4 +1,13 @@
+/*
+ * Description: 
+ * Class used for reading the text file/sample with explicit content.
+ * The text file is loaded into an array list which is checked against the 
+ * text file which contains all words considered explicit.
+ * 
+ */
+
 package explicit;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

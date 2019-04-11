@@ -1,4 +1,12 @@
+/*
+ * Description: 
+ * Used for adding / removing words from the list of Explicit words.
+ * It rewrites the file using the FileUtils.writeStringToFile method from the Apache Commons library.
+ * 
+ */
+
 package explicit;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.io.IOException;

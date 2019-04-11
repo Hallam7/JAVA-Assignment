@@ -1,4 +1,12 @@
+/*
+ * Description: 
+ * Engine class used for scanning the user file.
+ * Contains methods for checking for explicit content.
+ * Checks for and rates results on how explicit they are.
+ */
+
 package explicit;
+
 import java.util.ArrayList;
 
 public class Engine {

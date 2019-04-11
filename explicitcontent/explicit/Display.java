@@ -1,3 +1,10 @@
+/*
+ * Description:
+ * Interface for Language Analyser.
+ * Buttons laid out on top and Scan button beside file loaded in.
+ * 
+ */
+
 package explicit;
 
 import java.io.File;
@@ -28,8 +35,8 @@ public class Display extends JFrame implements ActionListener
 	private ArrayList<String> explicit = new ArrayList<String>();
 	
 	JFileChooser choose;
-	JTextArea postpart, badpart, result;
-	JScrollPane postmove, badmove;
+	JTextArea postp, slangp, result;
+	JScrollPane postm, slangm;
 	JPanel panel_l;
 	
 	private String[] words;
@@ -50,25 +57,25 @@ public class Display extends JFrame implements ActionListener
 		checkfor = new JButton("Check for Explicit Content");
 		
 		choose = new JFileChooser();
-		postpart = new JTextArea(20, 25);
-		postmove = new JScrollPane(postpart);
-		badpart = new JTextArea(20, 20);
-		badmove = new JScrollPane(badpart);
+		postp = new JTextArea(20, 25);
+		postm = new JScrollPane(postp);
+		slangp = new JTextArea(20, 20);
+		slangm = new JScrollPane(slangp);
 		result = new JTextArea();
 		panel_l = new JPanel();
 		
 		//.setEnabled(false);
 		//.setDisabledTextColor(Color.BLACK);
-		postpart.setEnabled(false);
-		postpart.setDisabledTextColor(Color.BLACK);
-		badpart.setEnabled(false);
-		badpart.setDisabledTextColor(Color.BLACK);
+		postp.setEnabled(false);
+		postp.setDisabledTextColor(Color.BLACK);
+		slangp.setEnabled(false);
+		slangp.setDisabledTextColor(Color.BLACK);
 		result.setEnabled(false);
 		result.setDisabledTextColor(Color.BLACK);
 
 		//.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		badmove.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		postmove.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		slangm.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		postm.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		
 		//Buttons
 		add(showexplicit);
@@ -76,8 +83,8 @@ public class Display extends JFrame implements ActionListener
 		add(checkfor);
 		add(add);
 		add(remove);
-		add(postmove);
-		add(badmove);
+		add(postm);
+		add(slangm);
 		add(result);
 	
 		//.addActionListener(this);
@@ -115,7 +122,7 @@ public class Display extends JFrame implements ActionListener
 					//String - read first!
 					String data = FileUtils.readFileToString(user_file, Charset.forName("utf-8"));
 					System.out.println(data);
-					postpart.append(data);
+					postp.append(data);
 					words = data.split("\\s");
 					for (String s : words)
 					{
@@ -136,7 +143,7 @@ public class Display extends JFrame implements ActionListener
 			//Check if file is loaded
 			if(words == null)
 			{
-				JOptionPane.showMessageDialoge(null,  "Must select file to scan!", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,  "Must select file to scan!");
 			}
 			else
 			{
@@ -168,10 +175,10 @@ public class Display extends JFrame implements ActionListener
 		//Show Explixit Content
 		if (e.getSource() == showexplicit)
 		{
-			badpart.setText("");
+			slangp.setText("");
 			for(String s : explicit)
 			{
-				badpart.append(s + System.getProperty("line.separator"));
+				slangp.append(s + System.getProperty("line.separator"));
 			}
 		}
 		
@@ -202,12 +209,12 @@ public class Display extends JFrame implements ActionListener
 			
 			System.out.println(explicit);
 			
-			badpart.setText("");
+			slangp.setText("");
 			//Refresh
 			
 			for(String s : explicit)
 			{
-				badpart.append(s + System.getProperty("line.separator"));
+				slangp.append(s + System.getProperty("line.separator"));
 			}
 		}
 		
@@ -233,12 +240,12 @@ public class Display extends JFrame implements ActionListener
 				}
 			}
 			
-			badpart.setText("");
+			slangp.setText("");
 			//Refresh
 			
 			for (String s : explicit)
 			{
-				badpart.append(s + System.getProperty("line.seperator"));
+				slangp.append(s + System.getProperty("line.seperator"));
 			}
 		}
 		
