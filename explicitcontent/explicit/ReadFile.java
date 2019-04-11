@@ -50,7 +50,6 @@ public class ReadFile {
 			System.out.println(e.getMessage());
 		}
 		
-		//Error - line 62 - Finally not recognised 
 		finally  
 		{
 			System.out.println((filename) + "=" + (word_array));
