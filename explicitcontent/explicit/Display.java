@@ -56,13 +56,13 @@ public class Display extends JFrame implements ActionListener
 		remove = new JButton ("Remove Word");
 		checkfor = new JButton("Check for Explicit Content");
 		
+		panel_l = new JPanel();
 		choose = new JFileChooser();
-		postp = new JTextArea(20, 25);
+		postp = new JTextArea(25, 20);
 		postm = new JScrollPane(postp);
-		slangp = new JTextArea(20, 20);
+		slangp = new JTextArea(25, 20);
 		slangm = new JScrollPane(slangp);
 		result = new JTextArea();
-		panel_l = new JPanel();
 		
 		//.setEnabled(false);
 		//.setDisabledTextColor(Color.BLACK);
@@ -71,7 +71,7 @@ public class Display extends JFrame implements ActionListener
 		slangp.setEnabled(false);
 		slangp.setDisabledTextColor(Color.BLACK);
 		result.setEnabled(false);
-		result.setDisabledTextColor(Color.BLACK);
+		result.setDisabledTextColor(Color.RED);
 
 		//.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		slangm.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -83,6 +83,7 @@ public class Display extends JFrame implements ActionListener
 		add(checkfor);
 		add(add);
 		add(remove);
+		
 		add(postm);
 		add(slangm);
 		add(result);
@@ -122,7 +123,8 @@ public class Display extends JFrame implements ActionListener
 					//String - read first!
 					String data = FileUtils.readFileToString(user_file, Charset.forName("utf-8"));
 					System.out.println(data);
-					postp.append(data);
+					//postp.append(data);
+					postp.setText(data);
 					words = data.split("\\s");
 					for (String s : words)
 					{
@@ -153,19 +155,19 @@ public class Display extends JFrame implements ActionListener
 				//Scoring posts on how explicit they are
 				//Over 50 is very explicit
 				//Under is moderately explicit
-				if (check.getScore()>= 100 || check.getScore()>= 60)
+				if (check.getScore() >= 100 || check.getScore()>= 50)
 				{
-					result.setText("High Explicit Rating " + "of: " + (check.getScore()) +  "\n" + "Explicit words: " + (check.getCount()) + "Words shouted: " + (check.getUpper()));
+					result.setText("High Explicit Rating of: " + (check.getScore()) +  "\n" + "Explicit words: " + (check.getCount()) + "\n" + "Words shouted: " + (check.getUpper()));
 				}
 				
-				else if (check.getScore()< 60 && check.getScore()> 11)
+				else if (check.getScore()< 50 && check.getScore() > 10)
 				{
-					result.setText("Moderate Explicit Rating " + "of: " +  (check.getScore()) + "\n" + "Explicit words: " + (check.getCount()) + "Words shouted: " + (check.getUpper()));
+					result.setText("Moderate Explicit Rating of: " +  (check.getScore()) + "\n" + "Explicit words: " + (check.getCount()) + "\n" + "Words shouted: " + (check.getUpper()));
 				}
 				
-				else if (check.getScore()< 11)
+				else if (check.getScore() == 10)
 				{
-					result.setText("Low Explicit Rating " + "of: " +  (check.getScore()) + "\n" + "Explicit words: " + (check.getCount()) + "Words shouted: " + (check.getUpper()));
+					result.setText("Low Explicit Rating of: " +  (check.getScore()) + "\n" + "Explicit words: " + (check.getCount()) + "\n" + "Words shouted: " + (check.getUpper()));
 				}
 				
 			}

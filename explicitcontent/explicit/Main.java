@@ -7,7 +7,7 @@ package explicit;
  * Words can be added/removed in an array list which are all considered explicit.
  * The user is required to choose a file to be scanned.
  * The sample/file is then is given a explicit rating.
- * (60+ being Extreamley explicit, 10-60 being Moderately explicit, and <10 being non explicit)
+ * (60+ being Extremely explicit, 10-60 being Moderately explicit, and <10 being non explicit)
  * 
  */
 

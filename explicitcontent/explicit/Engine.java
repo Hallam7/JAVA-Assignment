@@ -20,6 +20,7 @@ public class Engine {
 	private int upper = 0;
 	private int multiply = 0;
 	private int score = 0;
+	
 	final String newline = System.getProperty("line.separator");
 	
 	public Engine(ArrayList<String> word_array, String[] postword)
@@ -48,17 +49,19 @@ public class Engine {
 		//Check against Upper Case
 		for (String s : postword)
 		{
+			//System.out.println(s);
+			
 			if(word_cap.contains(s));
 			{
 				count++;
-				System.out.println("Found in Caps");
+				System.out.println("Found Caps");
 			}
 		}
 		
 		//Check Lenght of 
 		post_size = postword.length;
 		
-		System.out.println("Offensive words found: " + (count) + "/n" + "post_size = " + (post_size));
+		System.out.println("Offensive words found: " + (count) + "\n" + "post_size = " + (post_size));
 		
 		//Check the String for Caps
 		for (String s: postword)
@@ -67,7 +70,7 @@ public class Engine {
 			{
 				if(s.length() != 1)
 				{
-					if (!s.contentEquals(""))
+					if (!s.equals(""))
 					{
 						if (!Character.isDigit(s.charAt(0)))
 						{
@@ -85,9 +88,9 @@ public class Engine {
 		multiply = count * 10;
 		score = multiply;
 		
-		if (upper >= 1)
+		if (upper == post_size)
 		{
-			score = score +100;
+			score = score + 100;
 		}
 		
 		else if (upper >= 1)
@@ -121,14 +124,14 @@ public class Engine {
 		this.count = count;
 	}
 	
-	public int getPost()
+	public int getPost_size()
 	{
 		return post_size;
 	}
 	
-	public void setPost(int post)
+	public void setPost_size(int post_size)
 	{
-		this.post_size = post;
+		this.post_size = post_size;
 	}
 	
 	public int getScore()
@@ -136,7 +139,7 @@ public class Engine {
 		return score;
 	}
 	
-	public void getSore(int score)
+	public void setSore(int score)
 	{
 		this.score = score;
 	}
@@ -146,7 +149,7 @@ public class Engine {
 		return multiply;
 	}
 	
-	public void getMultiply(int multiply)
+	public void setMultiply(int multiply)
 	{
 		this.multiply = multiply;
 	}

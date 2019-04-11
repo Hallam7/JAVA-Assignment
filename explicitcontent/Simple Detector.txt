@@ -1,0 +1,3 @@
+Simple detector
+This line is clean
+This line is clean
