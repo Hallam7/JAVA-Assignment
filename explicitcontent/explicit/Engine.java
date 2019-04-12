@@ -49,9 +49,9 @@ public class Engine {
 		//Check against Upper Case
 		for (String s : postword)
 		{
-			//System.out.println(s);
+			System.out.println(s);
 			
-			if(word_cap.contains(s));
+			if(word_cap.contains(s))
 			{
 				count++;
 				System.out.println("Found Caps");
