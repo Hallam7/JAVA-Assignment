@@ -170,11 +170,16 @@ public class Display extends JFrame implements ActionListener
 					result.setText("Low Explicit Rating of: " +  (check.getScore()) + "\n" + "Explicit words: " + (check.getCount()) + "\n" + "Words shouted: " + (check.getUpper()));
 				}
 				
+				else if (check.getScore() < 9 && check.getScore() >= 0)
+				{
+					result.setText("No Explicit content found" + "\n" + "Explicit words: " + (check.getCount()) + "\n" + "Words shouted: " + (check.getUpper()));
+				}
+				
 			}
 			
 		}
 		
-		//Show Explixit Content
+		//Show Explicit Content
 		if (e.getSource() == showexplicit)
 		{
 			slangp.setText("");
